@@ -1,0 +1,89 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+main{
+  position: relative;
+  flex-grow: 1;
+}
+
+.bg-white{
+  background-color: white;
+}
+
+.shadow-inset{
+  box-shadow: inset 4px 2px 8px rgba(0, 0, 0, 0.123);
+}
+
+
+.party-mode{
+  outline: dotted 10px rgb(255, 217, 0);
+}
+
+
+
+.dvd{
+  width: 100px;
+  height: 100px;
+  display:  block;
+  animation: dvd 5s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: inherit;
+  font-size: 60px;
+  color: #fff;
+}
+
+.front{
+  background: rgba(90,90,90,.7);
+  transform: translateZ(50px);
+}
+.back{
+  background: rgba(0,210,0,.7);
+  transform: rotateY(180deg) translateZ(50px);}
+.left{
+  background: rgba(210,0,0,.7);
+    transform: rotateY(90deg) translateZ(50px);
+}
+.right{
+  background: rgba(0,0,210,.7);
+    transform: rotateY(-90deg) translateZ(50px);
+}
+.top{
+  background: rgba(210,210,0,.7);
+    transform: rotateX(90deg) translateZ(50px);
+}
+.bottom{
+  background: rgba(210,0,210,.7);
+    transform: rotateX(-90deg) translateZ(50px)
+}
+
+.dvd img{
+  filter: invert(1);
+}
+
+marquee{
+  z-index: 0;
+  position: absolute;
+}
+
+@keyframes dvd {
+  0%{
+    transform: rotate3d(0,0,0, 0deg);
+  }
+  0%{
+    transform: rotate3d(1,1,1, 360deg);
+  }
+}
